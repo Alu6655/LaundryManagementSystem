@@ -1,0 +1,38 @@
+﻿@model IEnumerable<LMS.Models.barcode>
+@{
+    ViewBag.Title = "BarcodeListt";
+}
+<h1 style="margin-top:20px; font-weight:bold; color:white;">Barcode Generated List</h1>
+<div style="margin-top:10px;color:white;">
+    <hr />
+    <p>
+        @Html.ActionLink("Generate New Barcode", "Index")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Bid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bcode)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bcode)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete_barcode", new { id = item.Bid })
+            </td>
+        </tr>
+    }
+
+</table>
+    </div>

@@ -1,0 +1,32 @@
+﻿@model LMS.Models.barcode
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 style="margin-top:20px; font-weight:bold; color:white;">Barcode Generator</h1>
+<div style="margin-top:10px;">
+    <hr />
+    @using (Html.BeginForm("Index","Barcode",FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Bcode, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Bcode, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Bcode, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Generate" class="btn btn-default" />
+            </div>
+                @if (ViewBag.BarcodeImage!= null)
+                {
+                    <img src="@ViewBag.BarcodeImage" alt="" />
+                }
+            </div>
+        </div>
+    }
+</div>
+
+

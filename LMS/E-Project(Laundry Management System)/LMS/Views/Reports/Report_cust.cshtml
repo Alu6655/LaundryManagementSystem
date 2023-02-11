@@ -1,0 +1,64 @@
+﻿@model IEnumerable<LMS.Models.customer>
+@{
+    ViewBag.Title = "Report_cust";
+}
+<h1 style="margin-top:20px; font-weight:bold; color:white;">Reports</h1>
+<div style="margin-top:10px;">
+    <h3>
+        Customer Report | @Html.ActionLink("Due Payment","Due_Payment")
+    </h3>
+    <hr />
+    <h2 style="color:white;">Search Customer</h2>
+    @using (Html.BeginForm("Report_cust", "Reports", FormMethod.Post))
+    {
+        <div class="form-group">
+            <input type="text" placeholder="Enter Customer Contact" name="name" class="form-control" />
+            <div class="col-md-2" style="float:right">
+                <button class="btn btn-block ">Search</button>
+            </div>
+        </div>
+    }
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cfn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ccontact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cemail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caddress)
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cfn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ccontact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cemail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Caddress)
+                </td>
+              </tr>
+        }
+    </table>
+</div>
+
+
+

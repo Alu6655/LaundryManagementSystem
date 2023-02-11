@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="lmsModelStoreContainer" CdmEntityContainer="lmsEntities">
+    <EntitySetMapping Name="priceList_pkw">
+      <EntityTypeMapping TypeName="lmsModel.priceList_pkw">
+        <MappingFragment StoreEntitySet="priceList_pkw">
+          <ScalarProperty Name="PKWprice" ColumnName="PKWprice" />
+          <ScalarProperty Name="PKWmonthpiece" ColumnName="PKWmonthpiece" />
+          <ScalarProperty Name="PKWservice" ColumnName="PKWservice" />
+          <ScalarProperty Name="PKWcode" ColumnName="PKWcode" />
+          <ScalarProperty Name="PKWid" ColumnName="PKWid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="priceList_pw">
+      <EntityTypeMapping TypeName="lmsModel.priceList_pw">
+        <MappingFragment StoreEntitySet="priceList_pw">
+          <ScalarProperty Name="PWprice" ColumnName="PWprice" />
+          <ScalarProperty Name="PWclothtype" ColumnName="PWclothtype" />
+          <ScalarProperty Name="PWservice" ColumnName="PWservice" />
+          <ScalarProperty Name="PWcode" ColumnName="PWcode" />
+          <ScalarProperty Name="PWid" ColumnName="PWid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="priceList_ww">
+      <EntityTypeMapping TypeName="lmsModel.priceList_ww">
+        <MappingFragment StoreEntitySet="priceList_ww">
+          <ScalarProperty Name="PWprice" ColumnName="PWprice" />
+          <ScalarProperty Name="PWboxweight" ColumnName="PWboxweight" />
+          <ScalarProperty Name="PWservice" ColumnName="PWservice" />
+          <ScalarProperty Name="PWcode" ColumnName="PWcode" />
+          <ScalarProperty Name="PWid" ColumnName="PWid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="barcodes">
+      <EntityTypeMapping TypeName="lmsModel.barcode">
+        <MappingFragment StoreEntitySet="barcode">
+          <ScalarProperty Name="Bcode" ColumnName="Bcode" />
+          <ScalarProperty Name="Bid" ColumnName="Bid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="lmsModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="Caddress" ColumnName="Caddress" />
+          <ScalarProperty Name="Cemail" ColumnName="Cemail" />
+          <ScalarProperty Name="Ccontact" ColumnName="Ccontact" />
+          <ScalarProperty Name="Cfn" ColumnName="Cfn" />
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderlist_pw">
+      <EntityTypeMapping TypeName="lmsModel.orderlist_pw">
+        <MappingFragment StoreEntitySet="orderlist_pw">
+          <ScalarProperty Name="PWid" ColumnName="PWid" />
+          <ScalarProperty Name="OPWadvance" ColumnName="OPWadvance" />
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+          <ScalarProperty Name="OPWprice" ColumnName="OPWprice" />
+          <ScalarProperty Name="OPWstat" ColumnName="OPWstat" />
+          <ScalarProperty Name="OPWdue" ColumnName="OPWdue" />
+          <ScalarProperty Name="OPWdel" ColumnName="OPWdel" />
+          <ScalarProperty Name="OPWdate" ColumnName="OPWdate" />
+          <ScalarProperty Name="OPWqty" ColumnName="OPWqty" />
+          <ScalarProperty Name="OPWcode" ColumnName="OPWcode" />
+          <ScalarProperty Name="OPWservice" ColumnName="OPWservice" />
+          <ScalarProperty Name="OPWcust" ColumnName="OPWcust" />
+          <ScalarProperty Name="OPWid" ColumnName="OPWid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderlist_pkw">
+      <EntityTypeMapping TypeName="lmsModel.orderlist_pkw">
+        <MappingFragment StoreEntitySet="orderlist_pkw">
+          <ScalarProperty Name="OPWprice" ColumnName="OPWprice" />
+          <ScalarProperty Name="OPWdue" ColumnName="OPWdue" />
+          <ScalarProperty Name="OPWadvance" ColumnName="OPWadvance" />
+          <ScalarProperty Name="OPWstat" ColumnName="OPWstat" />
+          <ScalarProperty Name="OPWdel" ColumnName="OPWdel" />
+          <ScalarProperty Name="OPWdate" ColumnName="OPWdate" />
+          <ScalarProperty Name="OPWfp" ColumnName="OPWfp" />
+          <ScalarProperty Name="OPWservice" ColumnName="OPWservice" />
+          <ScalarProperty Name="OPWcode" ColumnName="OPWcode" />
+          <ScalarProperty Name="OPWcust" ColumnName="OPWcust" />
+          <ScalarProperty Name="OPWid" ColumnName="OPWid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderlist_ww">
+      <EntityTypeMapping TypeName="lmsModel.orderlist_ww">
+        <MappingFragment StoreEntitySet="orderlist_ww">
+          <ScalarProperty Name="OPWprice" ColumnName="OPWprice" />
+          <ScalarProperty Name="OPWdue" ColumnName="OPWdue" />
+          <ScalarProperty Name="OPWadvance" ColumnName="OPWadvance" />
+          <ScalarProperty Name="OPWstat" ColumnName="OPWstat" />
+          <ScalarProperty Name="OPWdel" ColumnName="OPWdel" />
+          <ScalarProperty Name="OPWdate" ColumnName="OPWdate" />
+          <ScalarProperty Name="OPWbw" ColumnName="OPWbw" />
+          <ScalarProperty Name="OPWservice" ColumnName="OPWservice" />
+          <ScalarProperty Name="OPWcode" ColumnName="OPWcode" />
+          <ScalarProperty Name="OPWcust" ColumnName="OPWcust" />
+          <ScalarProperty Name="OPWid" ColumnName="OPWid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="delstatus">
+      <EntityTypeMapping TypeName="lmsModel.delstatu">
+        <MappingFragment StoreEntitySet="delstatus">
+          <ScalarProperty Name="DSstatus" ColumnName="DSstatus" />
+          <ScalarProperty Name="DSid" ColumnName="DSid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

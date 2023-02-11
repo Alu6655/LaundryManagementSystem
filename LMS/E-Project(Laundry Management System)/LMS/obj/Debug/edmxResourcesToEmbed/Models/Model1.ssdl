@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="lmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="barcode">
+    <Key>
+      <PropertyRef Name="Bid" />
+    </Key>
+    <Property Name="Bid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bcode" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="Cid" />
+    </Key>
+    <Property Name="Cid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cfn" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ccontact" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Cemail" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Caddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="delstatus">
+    <Key>
+      <PropertyRef Name="DSid" />
+    </Key>
+    <Property Name="DSid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DSstatus" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderlist_pkw">
+    <Key>
+      <PropertyRef Name="OPWid" />
+    </Key>
+    <Property Name="OPWid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OPWcust" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWcode" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWservice" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWfp" Type="int" Nullable="false" />
+    <Property Name="OPWdate" Type="datetime" Nullable="false" />
+    <Property Name="OPWdel" Type="date" Nullable="false" />
+    <Property Name="OPWstat" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWadvance" Type="money" Nullable="false" />
+    <Property Name="OPWdue" Type="money" />
+    <Property Name="OPWprice" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderlist_pw">
+    <Key>
+      <PropertyRef Name="OPWid" />
+    </Key>
+    <Property Name="OPWid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OPWcust" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWservice" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWcode" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWqty" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWdate" Type="datetime" Nullable="false" />
+    <Property Name="OPWdel" Type="date" Nullable="false" />
+    <Property Name="OPWdue" Type="money" />
+    <Property Name="OPWstat" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWprice" Type="money" Nullable="false" />
+    <Property Name="Cid" Type="int" />
+    <Property Name="OPWadvance" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="PWid" Type="int" />
+  </EntityType>
+  <EntityType Name="orderlist_ww">
+    <Key>
+      <PropertyRef Name="OPWid" />
+    </Key>
+    <Property Name="OPWid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OPWcust" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWcode" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWservice" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWbw" Type="int" Nullable="false" />
+    <Property Name="OPWdate" Type="datetime" Nullable="false" />
+    <Property Name="OPWdel" Type="date" Nullable="false" />
+    <Property Name="OPWstat" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPWadvance" Type="money" Nullable="false" />
+    <Property Name="OPWdue" Type="money" />
+    <Property Name="OPWprice" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="priceList_pkw">
+    <Key>
+      <PropertyRef Name="PKWid" />
+    </Key>
+    <Property Name="PKWid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PKWcode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PKWservice" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PKWmonthpiece" Type="int" Nullable="false" />
+    <Property Name="PKWprice" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="priceList_pw">
+    <Key>
+      <PropertyRef Name="PWid" />
+    </Key>
+    <Property Name="PWid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PWcode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PWservice" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PWclothtype" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PWprice" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="priceList_ww">
+    <Key>
+      <PropertyRef Name="PWid" />
+    </Key>
+    <Property Name="PWid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PWcode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PWservice" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PWboxweight" Type="int" Nullable="false" />
+    <Property Name="PWprice" Type="money" Nullable="false" />
+  </EntityType>
+  <Association Name="fk">
+    <End Role="priceList_pw" Type="Self.priceList_pw" Multiplicity="0..1" />
+    <End Role="orderlist_pw" Type="Self.orderlist_pw" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="priceList_pw">
+        <PropertyRef Name="PWid" />
+      </Principal>
+      <Dependent Role="orderlist_pw">
+        <PropertyRef Name="PWid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__orderlist_p__Cid__6FE99F9F">
+    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+    <End Role="orderlist_pw" Type="Self.orderlist_pw" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="Cid" />
+      </Principal>
+      <Dependent Role="orderlist_pw">
+        <PropertyRef Name="Cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="lmsModelStoreContainer">
+    <EntitySet Name="barcode" EntityType="Self.barcode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="delstatus" EntityType="Self.delstatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderlist_pkw" EntityType="Self.orderlist_pkw" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderlist_pw" EntityType="Self.orderlist_pw" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderlist_ww" EntityType="Self.orderlist_ww" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="priceList_pkw" EntityType="Self.priceList_pkw" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="priceList_pw" EntityType="Self.priceList_pw" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="priceList_ww" EntityType="Self.priceList_ww" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk" Association="Self.fk">
+      <End Role="priceList_pw" EntitySet="priceList_pw" />
+      <End Role="orderlist_pw" EntitySet="orderlist_pw" />
+    </AssociationSet>
+    <AssociationSet Name="FK__orderlist_p__Cid__6FE99F9F" Association="Self.FK__orderlist_p__Cid__6FE99F9F">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="orderlist_pw" EntitySet="orderlist_pw" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,99 @@
+﻿@model IEnumerable<LMS.Models.orderlist_pkw>
+
+@{
+    ViewBag.Title = "OrderList_pkw";
+}
+<h1 style="margin-top:20px; font-weight:bold; color:white;">Orders</h1>
+<div style="margin-top:10px;">
+    <h3>
+        @Html.ActionLink("PieceWise Orders", "OrderList_pw") | @Html.ActionLink("WeightWise Orders", "OrderList_ww") | PackageWise Orders
+    </h3>
+    <hr />
+    <h2 style="color:white;">PackageWise</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create_pkw")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWcust)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWservice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWfp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWdel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWstat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWadvance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWdue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWprice)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OPWid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OPWcust)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OPWcode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OPWservice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OPWfp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OPWdate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OPWdel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OPWstat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OPWadvance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OPWdue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OPWprice)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit_pkw", new { id = item.OPWid }) |
+                    @Html.ActionLink("Invoice", "Invoice_pkw", new { id = item.OPWid }) |
+                    @Html.ActionLink("Delete", "Delete_pkw", new { id = item.OPWid })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

@@ -1,0 +1,95 @@
+﻿@model  LMS.Models.orderlist_pw
+@{
+    ViewBag.Title = "Invoice_pw";
+}
+@using (Html.BeginForm())
+{
+    <div style="background-color:white; width:420px; margin:auto; margin-top:50px;">
+        <div>
+            <meta charset="utf-8">
+            <title>Invoice</title>
+            <link rel="stylesheet" href="bill.css">
+            <link rel="license" href="https://www.opensource.org/licenses/mit-license/">
+            <script src="bill2.js"></script>
+        </div>
+        <div>
+            <header style="text-align:center">
+
+                <h1>Invoice</h1>
+                <address contenteditable>
+                    <h1 style="font-weight:bold";>Pakistan,Laundry Management</h1>
+                    <p style="font-weight:bold" ;>Customer's Name :@Html.DisplayFor(model => model.OPWcust)</p>
+                    <p style="font-weight:bold">Customer's Service : @Html.DisplayFor(model => model.OPWservice) </p>
+                </address>
+            </header>
+            <article>
+                <h1 style="text-align:center">Recipient</h1>
+                <address contenteditable>
+                    <p  style="text-align:center">Laundry Management(LM)<br>Generator: Admin</p>
+                    
+                </address>
+                <div style="position:relative; left:70px";>
+                    <table class="meta">
+                        <tr>
+                            <th><span contenteditable>Invoice #</span></th>
+                            <td><span contenteditable>@Html.DisplayFor(model => model.OPWid)</span></td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Date:</span></th>
+                            <td><span contenteditable>@Html.DisplayFor(model => model.OPWdate)</span></td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Delivery Date:</span></th>
+                            <td><span contenteditable>@Html.DisplayFor(model => model.OPWdel)</span></td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Amount Due:</span></th>
+                            <td><span id="prefix" contenteditable>RS.</span><span>@Html.DisplayFor(model => model.OPWdue)</span></td>
+                        </tr>
+                    </table>
+                    <table class="inventory">
+                        <tr>
+                            <th><span contenteditable>Item:</span></th>
+                            <td>@Html.DisplayFor(model => model.OPWcode)</td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Quantity:</span></th>
+                            <td>@Html.DisplayFor(model => model.OPWqty)</td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Amount Payment:</span></th>
+                            <td>RS. @Html.DisplayFor(model => model.OPWadvance)</td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Price:</span></th>
+                            <td>RS. @Html.DisplayFor(model => model.OPWprice)</td>
+                        </tr>
+
+                    </table>
+                    <table class="balance">
+                        <tr>
+                            <th><span contenteditable>Amount Paid:</span></th>
+                            <td>RS. @Html.DisplayFor(model => model.OPWadvance)</td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Balance Due:</span></th>
+                            <td>RS. @Html.DisplayFor(model => model.OPWdue)</td>
+                        </tr>
+                        <tr>
+                            <th><span contenteditable>Total:</span></th>
+                            <td>RS. @Html.DisplayFor(model => model.OPWprice)</td>
+                        </tr>
+                    </table>
+                </div>
+        </article>
+        <aside>
+            <h3 style="text-align:center" ;><span contenteditable>Additional Notes</span></h3>
+            <div contenteditable style="text-align:center" ;>
+                <p style="font-weight:bold" ;>A finance charge of 1.5% will be made <br /> on unpaid balances after 30 days.</p>
+            </div>
+        </aside>
+    </div>
+    </div>
+   
+}
+

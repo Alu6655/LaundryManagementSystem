@@ -1,0 +1,88 @@
+﻿@model IEnumerable<LMS.Models.orderlist_pw>
+
+@{
+    ViewBag.Title = "Due_Payment";
+}
+<h1 style="margin-top:20px; font-weight:bold; color:white;">Reports</h1>
+<div style="margin-top:10px;">
+    <h3>
+       DuePayment PieceWise | @Html.ActionLink("DuePayment WeightWise", "Duepayment_ww") | @Html.ActionLink("DuePayment PackageWise", "Duepayment_pkw")
+    </h3>
+    <hr />
+    <h2 style="color:white;">DuePayment PieceWise</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWcust)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWservice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWqty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWdue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWadvance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OPWprice)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.OPWdue != 0)
+                    {
+                        @Html.DisplayFor(modelItem => item.OPWcust)
+                    }
+                </td>
+                <td>
+                    @if (item.OPWdue != 0)
+                    {
+                        @Html.DisplayFor(modelItem => item.OPWservice)
+                    }
+                </td>
+                <td>
+                    @if (item.OPWdue != 0)
+                    {
+                        @Html.DisplayFor(modelItem => item.OPWqty)
+                    }
+                </td>
+                <td>
+                    @if (item.OPWdue != 0)
+                    {
+                        @Html.DisplayFor(modelItem => item.OPWdate)
+                    }
+                </td>
+                <td>
+                    @if (item.OPWdue != 0)
+                    {
+                        @Html.DisplayFor(modelItem => item.OPWdue)
+                    }
+                </td>
+                <td>
+                    @if (item.OPWdue != 0)
+                    {
+                        @Html.DisplayFor(modelItem => item.OPWadvance)
+                    }
+                </td>
+                <td>
+                    @if (item.OPWdue != 0)
+                    {
+                        @Html.DisplayFor(modelItem => item.OPWprice)
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
+    @Html.ActionLink("Back", "Report_cust");
+    </div>

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<LMS.Models.priceList_ww>
+
+@{
+    ViewBag.Title = "WeightWise";
+}
+<h1 style="margin-top:20px; font-weight:bold; color:white;">Prices</h1>
+<div style="margin-top:10px;">
+    <h3>
+        @Html.ActionLink("PieceWise Prices", "PieceWise") | WeightWise Prices | @Html.ActionLink("PackageWise Prices", "PackageWise")
+    </h3>
+    <hr />
+    <h2 style="color:white;">WeightWise</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create1")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PWid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PWcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PWservice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PWboxweight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PWprice)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PWid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PWcode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PWservice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PWboxweight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PWprice)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit1", new { id = item.PWid }) |
+                    @Html.ActionLink("Delete", "Delete1", new { id = item.PWid })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

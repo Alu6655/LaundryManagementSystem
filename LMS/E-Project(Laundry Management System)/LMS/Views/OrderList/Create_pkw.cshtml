@@ -1,0 +1,174 @@
+﻿@model LMS.Models.orderlist_pkw
+
+@{
+    ViewBag.Title = "Create_pkw";
+}
+<script src="~/scripts/jquery-3.5.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#OPWcode').change(function () {
+            $.ajax({
+                url: '/OrderList/CalculatePrice_pkw',
+                type: 'Get',
+                dataType: 'JSON',
+                data: { code: $('#OPWcode').val()},
+                success: function (data) {
+                    $('#OPWprice').val(data);
+                    },
+               
+            });
+        });
+        $('#OPWadvance').change(function () {
+            $.ajax({
+                url: '/OrderList/Advance_pkw',
+                type: 'Get',
+                dataType: 'JSON',
+                data: { code: $('#OPWcode').val(), count: $('#OPWadvance').val()},
+                success: function (data) {
+                    $('#OPWdue').val(data);
+
+                },
+             
+            });
+        });
+
+    $('#OPWcode').change(function () {
+        $.ajax({
+            url: '/OrderList/Service_pkw',
+            type: 'Get',
+            dataType: 'JSON',
+            data: { code: $('#OPWcode').val()},
+            success: function (data) {
+                $('#OPWservice').val(data);
+
+            },
+          
+        });
+    });
+    $('#OPWcode').change(function () {
+        $.ajax({
+            url: '/OrderList/fixed_pkw',
+            type: 'Get',
+            dataType: 'JSON',
+            data: { code: $('#OPWcode').val() },
+            success: function (data) {
+                $('#OPWfp').val(data);
+
+            },
+          
+        });
+    });
+    });
+
+</script>
+<h1 style="margin-top:20px; font-weight:bold; color:white;">Orders</h1>
+<div style="margin-top:10px;">
+    <h2 style="color:white;">PackageWise</h2>
+    <hr />
+    <h2 style="color:white;">Create</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.OPWcust, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="form-control col-md-10">
+                    @if (ViewBag.custl != null)
+                {
+                        @Html.DropDownListFor(model => model.OPWcust, ViewBag.custl as SelectList, "---Select Customer---", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.OPWcust, "", new { @class = "text-danger" })
+                    }
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.OPWcode, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="form-control col-md-10">
+                    @if (ViewBag.pwl != null)
+                {
+                        @Html.DropDownListFor(model => model.OPWcode, ViewBag.pwl as SelectList, "---Select Code---", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.OPWcode, "", new { @class = "text-danger" })
+                    }
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.OPWservice, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OPWservice, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OPWservice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.OPWfp, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OPWfp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OPWfp, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.OPWdate, htmlAttributes: new { @class = "control-label col-md-2 datetimepicker" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OPWdate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OPWdate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.OPWdel, htmlAttributes: new { @class = "control-label col-md-2 datetimepicker" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OPWdel, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OPWdel, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+          
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.OPWstat, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10 form-control">
+                    @if (ViewBag.ds != null)
+                    {
+                        @Html.DropDownListFor(model => model.OPWstat, ViewBag.ds as SelectList, "Select Delivery Status", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.OPWstat, "", new { @class = "text-danger" })
+                    }
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.OPWadvance, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OPWadvance, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OPWadvance, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.OPWdue, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OPWdue, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OPWdue, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.OPWprice, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OPWprice, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OPWprice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    <div>
+        @Html.ActionLink("Back to List", "OrderList_pkw")
+    </div>
+</div>
